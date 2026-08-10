@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import "@fontsource/playfair-display/500.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+
+/* Enables the `dark:` variant, toggled by adding .dark to <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Brand palette — extracted from the Official Seal + SK Logo */
+  --color-maroon-50: #fbebeb;
+  --color-maroon-100: #f2cccc;
+  --color-maroon-400: #a33636;
+  --color-maroon-500: #7a1a1a;
+  --color-maroon-600: #641515;
+  --color-maroon-700: #4d1010;
+  --color-maroon-900: #2e0a0a;
+
+  --color-gold-100: #fdf1c4;
+  --color-gold-400: #f7d24a;
+  --color-gold-500: #f5c518;
+  --color-gold-600: #d1a512;
+
+  --color-mayon-blue-100: #dce8f4;
+  --color-mayon-blue-500: #4a7fb5;
+  --color-mayon-blue-600: #3a6693;
+
+  --color-bamboo-green-100: #dcf0e1;
+  --color-bamboo-green-500: #3a7d44;
+  --color-bamboo-green-600: #2f6537;
+
+  --color-festival-red-100: #fbdcdc;
+  --color-festival-red-500: #d42b2b;
+  --color-festival-red-600: #b32121;
+
+  --color-earth-brown-500: #8b5e3c;
+
+  --color-cream-50: #faf8f4;
+  --color-cream-100: #f4f1ea;
+
+  /* Typography */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* Layout */
+  --radius-card: 0.75rem;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-cream-50);
+    color: var(--color-maroon-900);
+  }
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
